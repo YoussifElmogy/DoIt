@@ -30,6 +30,7 @@ export default function TaskBoard() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
         {columns.map((status) => (
           <TaskColumn
+          setShowCongrats={setShowCongrats}
             key={status}
             id={status}
             title={

@@ -2,7 +2,7 @@
 import { useDroppable } from "@dnd-kit/core";
 import TaskItem from "./TaskItem";
 
-export default function TaskColumn({ id, title, tasks }) {
+export default function TaskColumn({ id, title, tasks,setShowCongrats }) {
   const { setNodeRef } = useDroppable({ id });
 
   return (
@@ -10,7 +10,7 @@ export default function TaskColumn({ id, title, tasks }) {
       <h2 className="font-semibold text-xl mb-4">{title}</h2>
       <div className="space-y-2">
         {tasks.map((task) => (
-          <TaskItem key={task.id} task={task} />
+          <TaskItem key={task.id} task={task} setShowCongrats={setShowCongrats} />
         ))}
       </div>
     </div>
